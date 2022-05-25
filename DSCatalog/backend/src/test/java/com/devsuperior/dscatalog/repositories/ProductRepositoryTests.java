@@ -29,6 +29,18 @@ public class ProductRepositoryTests {
 		countTotalProducts = 25L;
 	}
 	
+	@Test
+	public void findByIdShouldReturnNonEmptyOptionalWhenIdExists() {
+		Optional<Product>result =  repository.findById(exintingId);
+		Assertions.assertTrue(result.isPresent());	
+	}
+	
+	@Test
+	public void findByIdShouldReturnEmptyOptionalWhenIdDoesNotExists() {
+		Optional<Product>result =  repository.findById(nonExistingId);
+		Assertions.assertFalse(result.isPresent());	
+	}
+	
 	@Test 
 	public void saveShouldPersistWithAutoincrementWhenIdIsNull() {
 		Product product = Factory.creatProduct();
