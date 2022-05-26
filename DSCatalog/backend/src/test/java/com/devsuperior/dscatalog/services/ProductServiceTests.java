@@ -79,6 +79,13 @@ public class ProductServiceTests {
 	}
 	
 	@Test
+	public void insertShouldInsertNewProductDTO() {
+		ProductDTO result = service.insert(dto);
+		
+		Assertions.assertNotNull(result);
+	}
+	
+	@Test
 	public void  updateShouldThrowResourceNotFoundExceptionWhenDoesNotExistId() {
 		Assertions.assertThrows(ResourceNotFoundException.class, () -> {
 			service.update(nonExistingId, dto);
