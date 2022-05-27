@@ -28,8 +28,6 @@ public class ProductServiceIT {
 	private Long nonExistingId;
 	private Long countTotalProducts;
 	
-	
-	
 	@BeforeEach
 	void setUp() throws Exception {
 		existingId = 1L;
@@ -84,25 +82,4 @@ public class ProductServiceIT {
 			service.delete(nonExistingId);
 		});
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
